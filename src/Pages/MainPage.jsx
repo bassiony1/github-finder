@@ -1,0 +1,18 @@
+import React from 'react'
+import Footer from '../components/Footer'
+import Main from '../components/Main'
+import Navbar from '../components/Navbar'
+
+
+
+const MainPage = () => {
+  return (
+    <>
+  <Navbar/>  
+    <Main/>
+  <Footer/>
+    </>
+  )
+}
+
+export default MainPage
