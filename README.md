@@ -9,7 +9,7 @@ A Github Profile Finder to maake it easier to reach the repos and data about a g
 - [@bassiony1](https://www.github.com/bassiony1)
 
 
-## Demo
+## Live Preview
 
-
+https://github-finder-bassiony1.vercel.app/
 
