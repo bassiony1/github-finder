@@ -17,7 +17,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    @media (width < 420px) {
+    @media (width < 720px) {
         flex-direction: column;
         justify-content: center;
         padding-block: 1rem;
@@ -32,11 +32,11 @@ const Left = styled.div`
     align-items: center;
     gap : 1rem;
     color : ${({theme : {colors}}) => colors.neutral_300};
-`
+    `
 
 const Title = styled(NavLink)`
     font-size: 1.5rem;
-`
+    `
 const Right = styled.div`
     
 `

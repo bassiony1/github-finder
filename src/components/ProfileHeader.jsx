@@ -1,5 +1,4 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 
@@ -8,7 +7,7 @@ const Container = styled.div`
   padding-block: 1rem;
   padding-inline: .5rem;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 2rem;
 
   @media (width < 760px){
     flex-direction: column;
@@ -18,6 +17,18 @@ const Container = styled.div`
 `
 const Left = styled.div`
   width: 50%;
+  min-width: 300px;
+  animation: move-in-left  .4s linear  alternate ;
+
+  @keyframes move-in-left {
+    0%{
+      translate : -1000px 0;
+    }
+    100%{
+      translate : 0 0;
+
+    }
+  } 
 `
 const ProfileImage = styled.img`
   border-radius: 15px;
@@ -28,6 +39,16 @@ const Right = styled.div`
   flex-direction: column;
   gap: 2rem;
   align-items: flex-start;
+  animation: move-in-right  .4s linear  alternate ;
+
+@keyframes move-in-right {
+    0%{
+      translate : 1000px 0;
+    }
+    100%{
+      translate : 0 0;
+    }
+  }
 `
 const TitleGroup = styled.div`
   display: flex;
@@ -84,6 +105,8 @@ const InfoGroup = styled.div`
   padding  : 1rem;
   border-radius: .5rem;
   box-shadow: 0px 0px 8px rgba( 0 , 0 , 0 , .125);
+  min-width: 200px;
+
   
 `
 const InfoHeader = styled.div`

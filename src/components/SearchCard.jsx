@@ -8,6 +8,16 @@ const Card = styled.div`
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    animation: fade-in  1s linear  alternate ;
+
+    @keyframes fade-in {
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
 `
 const Avatar = styled.img`
         cursor: pointer;

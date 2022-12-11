@@ -9,6 +9,7 @@ const Card = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1.3rem;
+   
 `
 const DataGroup = styled.div`
     display: flex;
