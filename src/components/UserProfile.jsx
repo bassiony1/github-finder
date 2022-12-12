@@ -69,6 +69,8 @@ const UserProfile = () => {
     
     
   }
+  
+
   return (
     <MainContainer>
       <Container>
@@ -77,7 +79,7 @@ const UserProfile = () => {
    <>
     <ProfileHeader user={user} /> 
     <ProfileData user={user}/> 
-    <ProfileRepos repos={repos}/>
+    <ProfileRepos  repos={repos}/>
    </>
     }
     </Container>

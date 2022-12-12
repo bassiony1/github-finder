@@ -1,6 +1,7 @@
 import {Route, Routes } from 'react-router-dom'
 import { ThemeProvider } from "styled-components";
-
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 import AboutPage from './Pages/AboutPage';
 import MainPage from './Pages/MainPage';
 import NotFoundPage from './Pages/NotFoundPage';

@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SearchCard from './SearchCard';
+import Aos from 'aos';
 
 const MainContainer = styled.div`
     background-color: ${({theme:{colors}})=> colors.secondary};
@@ -97,7 +98,9 @@ const ResultContainer = styled.div`
 
 const Main = () => {
 
-
+    useEffect(()=>{
+        Aos.init({duration:2000});
+    },[])
 const [loading , setLoading ] = useState(false);
 const [users , setUsers] = useState([]);
 const [input , setInput] = useState('');
@@ -153,7 +156,7 @@ const handleClear =  (e)=>{
   return (
     <MainContainer>
         <Container>
-            <SearchContainer>
+            <SearchContainer data-aos='zoom-in'>
                 <InputGroup>
             <ToastContainer
                     position="top-center"

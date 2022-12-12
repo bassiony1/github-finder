@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Repo from './Repo'
 
@@ -14,15 +14,18 @@ const ResaultContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    overflow: hidden;
     width: 100%;
 `
 const ProfileRepos = ({repos}) => {
+    
+ 
   return (
       <>
       <Title>Latest Repositories</Title>
       <ResaultContainer>
       {repos.map((repo , index) => {
-          return <Repo key={index} repo={repo}/>    
+          return  <Repo dir={index%2===0 ? 'right' : 'left'} key={index} repo={repo}/> ;
         })}
         </ResaultContainer>
     </>

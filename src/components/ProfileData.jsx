@@ -1,22 +1,13 @@
 import { Groups, Inventory, People, ViewInAr } from '@mui/icons-material'
-import React from 'react'
+import Aos from 'aos'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 
 
 const Container = styled.div`
     width: 100%;
     padding: 2rem;
-    opacity: 0;
-    animation: fade-in  1s .4s linear alternate ;
 
-@keyframes fade-in {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
 `
 const Info = styled.div`
   width: 100%;
@@ -53,7 +44,9 @@ const InfoData = styled.div`
   font-weight: regular;
 `
 const ProfileData = ({user}) => {
-
+  useEffect(()=>{
+    Aos.init({duration:2000});
+},[])
 const {
     public_repos ,
     public_gists ,
@@ -61,12 +54,10 @@ const {
     following
 
 } = user;
-const handleAnimation = (e)=>{
-  e.target.style.opacity = 1;
-}
+
   return (
     
-    <Container onAnimationEnd={(e)=>handleAnimation(e)}>
+    <Container data-aos='zoom-in'>
          <Info>
             <InfoLogoGroup>
                 <InfoGroup>

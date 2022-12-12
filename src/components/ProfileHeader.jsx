@@ -1,4 +1,5 @@
-import React from 'react'
+import Aos from 'aos'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 
 
@@ -18,17 +19,7 @@ const Container = styled.div`
 const Left = styled.div`
   width: 50%;
   min-width: 300px;
-  animation: move-in-left  .4s linear  alternate ;
-
-  @keyframes move-in-left {
-    0%{
-      translate : -1000px 0;
-    }
-    100%{
-      translate : 0 0;
-
-    }
-  } 
+ 
 `
 const ProfileImage = styled.img`
   border-radius: 15px;
@@ -39,16 +30,7 @@ const Right = styled.div`
   flex-direction: column;
   gap: 2rem;
   align-items: flex-start;
-  animation: move-in-right  .4s linear  alternate ;
-
-@keyframes move-in-right {
-    0%{
-      translate : 1000px 0;
-    }
-    100%{
-      translate : 0 0;
-    }
-  }
+  
 `
 const TitleGroup = styled.div`
   display: flex;
@@ -121,6 +103,9 @@ const InfoData = styled.p`
   font-size: .7rem;
 `
 const ProfileHeader = ({user}) => {
+  useEffect(()=>{
+    Aos.init({duration:2000});
+},[])
   const {
 html_url ,
 avatar_url ,
@@ -134,11 +119,11 @@ hireable,
 } = user ;
   return (
     <Container>
-        <Left >
+        <Left data-aos='zoom-in'>
       <ProfileImage src={avatar_url}>
       </ProfileImage>
         </Left>
-      <Right>
+      <Right data-aos='fade-right'>
         <TitleGroup>
           <Name>{name}</Name>
           <Padge>{type}</Padge>

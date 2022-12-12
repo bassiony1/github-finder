@@ -1,7 +1,7 @@
 import { BugReport, Link, Restaurant, Star, Visibility } from '@mui/icons-material'
-import React from 'react'
+import { useEffect } from 'react'
 import styled from 'styled-components'
-
+import Aos from 'aos'
 const Card = styled.div`
     width: 100%;
     background-color: ${({theme:{colors}})=> colors.primary};
@@ -9,8 +9,10 @@ const Card = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1.3rem;
-   
+    
+    
 `
+
 const DataGroup = styled.div`
     display: flex;
     gap: 1.2rem;
@@ -50,17 +52,21 @@ const PadgeFork = styled(PadgeEye)`
 
 `
 
-const Repo = ({repo}) => {
-const {
-    name , 
-    watchers_count , 
-    stargazers_count ,
-    forks_count , 
-    open_issues_count,
-    html_url,
-} = repo ;
-  return (
-    <Card>
+const Repo = ({repo , dir}) => {
+    useEffect(()=>{
+        Aos.init({duration:2000});
+    },[])
+    const {
+        name , 
+        watchers_count , 
+        stargazers_count ,
+        forks_count , 
+        open_issues_count,
+        html_url,
+    } = repo ;
+
+return (
+    <Card data-aos={dir==='left' ? 'fade-right' : 'fade-left'}>
         
         <DataGroup style={{ gap: ".6rem"}}>
             <Link style={{color : "white"}}/>
